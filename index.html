@@ -1,74 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/indietopia-interactive-site/assets/favicon.17e50649.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>Indietopia Website</title>
-   
-    <script type="module" crossorigin src="/indietopia-interactive-site/assets/index.7b693aa1.js"></script>
-    <link rel="stylesheet" href="/indietopia-interactive-site/assets/index.53f4d0e1.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/indietopia-interactive-site/assets/favicon.17e50649.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Saira&display=swap" rel="stylesheet">
+  
+  <title>Indietopia Website</title>
+
+  <script type="module" crossorigin src="/indietopia-interactive-site/assets/index.74559772.js"></script>
+  <link rel="stylesheet" href="/indietopia-interactive-site/assets/index.a2638513.css">
+</head>
+
+<body>
+
+  <div class="loader-wrapper">
+    <div class="center">
+      <div class="ring"></div>
+      <span>Loading World...</span>
+    </div>
+  </div>
+
+  <div class="intro-container">
+    <p>Welcome to the world of Indietopia</p>
+  </div>
+
+  <div class="light-background"></div>
+  <div class="dark-background"></div>
+
+  <div>
+    <canvas class="canvas"></canvas>
+  </div>
+
+  <div class="modal" id="modal-foundation">
+    <div class="modal-header">
+      <div class="modal-title">Indietopia Foundation</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      Do you want to learn more about the company?<br>
+      You will find information about these topics:
+      <ul>
+        <li>Developer Coaching</li>
+        <li>Business Coaching</li>
+        <li>Events</li>
+      </ul>
+    </div>
+    <div class="line">
+      <label for="click" class="button" id="foundation-link-button"><svg xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <image href="/indietopia-interactive-site/assets/rocket icon.e1493215.png" x="0" y="0" height="50px" width="50px" />
+        </svg>Take me there!</label>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-fablab">
+    <div class="modal-header">
+      <div class="modal-title">FabLab</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      Do you want to learn more about 3D printing?<br>
+      You will find information about these topics:
+      <ul>
+        <li>3D Printing Service</li>
+        <li>Workshops</li>
+      </ul>
+    </div>
+    <div class="line">
+      <label for="click" class="button" id="fablab-link-button"><svg xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <image href="/indietopia-interactive-site/assets/rocket icon.e1493215.png" x="0" y="0" height="50px" width="50px" />
+        </svg>Take me there!</label>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-bv">
+    <div class="modal-header">
+      <div class="modal-title">Indietopia BV</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      Do you want to learn more about Indietopia's projects?<br>
+      You will find information about these topics:
+      <ul>
+        <li>Projects</li>
+        <li>Internships</li>
+      </ul>
+    </div>
+    <div class="line">
+      <label for="click" class="button" id="bv-link-button"><svg xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <image href="/indietopia-interactive-site/assets/rocket icon.e1493215.png" x="0" y="0" height="50px" width="50px" />
+        </svg>Take me there!</label>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <label class="zoomoutbtn" id="zoomout">Zoom out</label>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
   
-    <nav>
-      <div class="nav-container">
-        <img class="logo" src="/indietopia-interactive-site/assets/indietopia text big.4ee1f5e9.png" alt="logo">
+  <script>
 
-        <div class="nav-menu">
-        
-        </div>
-      </div>
-    </nav>
-    
-    <div class="light-background"></div>
-    <div class ="dark-background"></div>
+    setTimeout(function () {
+      $(".intro-container").fadeIn('slow', function () {
+      });
+    }, 5000);
 
-    <div>
-      <canvas></canvas>
-    </div>
+    setTimeout(function () {
+      $(".intro-container").fadeOut('slow', function () {
+      });
+    }, 7000);
 
-    <div class="modal" id="modal-foundation">
-      <div class="modal-header">
-        <div class="modal-title">Indietopia Foundation</div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eaque impedit et quod in dolore, officia facere obcaecati vero aperiam explicabo consequuntur perspiciatis ab accusantium debitis eveniet tenetur animi officiis.
-      </div>
-      <img class="button" id="foundation-link-button" src="/indietopia-interactive-site/assets/rocket icon.e1493215.png">
-    </div>
+    window.addEventListener('load', (event) => {
 
-    <div class="modal" id="modal-fablab">
-      <div class="modal-header">
-        <div class="modal-title">FabLab</div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eaque impedit et quod in dolore, officia facere obcaecati vero aperiam explicabo consequuntur perspiciatis ab accusantium debitis eveniet tenetur animi officiis.
-      </div>
-      <img class="button" id="fablab-link-button" src="/indietopia-interactive-site/assets/rocket icon.e1493215.png">
-    </div>
+      $(".canvas").fadeOut('fast');
 
-    <div class="modal" id="modal-bv">
-      <div class="modal-header">
-        <div class="modal-title">Indietopia BV</div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eaque impedit et quod in dolore, officia facere obcaecati vero aperiam explicabo consequuntur perspiciatis ab accusantium debitis eveniet tenetur animi officiis.
-      </div>
-      <img class="button" id="bv-link-button" src="/indietopia-interactive-site/assets/rocket icon.e1493215.png">
-    </div>
+      setTimeout(function () {
+        $(".loader-wrapper").fadeOut('slow', function () {
+        });
+      }, 4000);
 
-    <div id="overlay"></div>
+      setTimeout(function () {
+        $(".canvas").fadeIn('slow', function () {
+        });
+      }, 8000);
+    });
+  </script>
 
-    <button class="zoomoutbtn" id="zoomout">Zoom out</button>
+</body>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    
-   
-  </body>
 </html>
